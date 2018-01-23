@@ -224,6 +224,9 @@
                                 <state key="normal" title="Don't have an account? Sign up here">
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountBtnPressed:" destination="334-rh-arx" eventType="touchUpInside" id="Rme-FN-TDa"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="jAV-dT-siH">
                                 <rect key="frame" x="62" y="160" width="250" height="86"/>
@@ -299,10 +302,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zrD-2B-RHw"/>
                     </view>
+                    <connections>
+                        <segue destination="jXN-UR-cpl" kind="show" identifier="toCreateAccount" id="Gn4-97-S3U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8W-Zz-oez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="-353.07346326836586"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cz3-gK-dps">
+            <objects>
+                <viewController id="jXN-UR-cpl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QLF-7B-NrB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mSv-KO-p6i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfg-Jn-aVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2427" y="-355"/>
         </scene>
     </scenes>
     <resources>
