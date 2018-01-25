@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class AuthService {
     static let instance = AuthService()
@@ -41,6 +42,26 @@ class AuthService {
         
         set {
             defaults.set(newValue, forKey: USER_EMAIL)
+        }
+    }
+    
+    func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        
+        let header = [
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        let body: [String: Any] = [
+            "email": email.lowercased(),
+            "password": password,
+        ]
+        
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
         }
     }
 }
