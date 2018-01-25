@@ -25,7 +25,7 @@ class GradientView: UIView {
         }
     }
     
-    // callled whenever setNeedsLayout() is called
+    // called automatically whenever setNeedsLayout() is called
     override func layoutSubviews() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
