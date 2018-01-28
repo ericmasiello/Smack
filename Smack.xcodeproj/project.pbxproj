@@ -15,6 +15,8 @@
 		077BAF38201A1D70005ACC4F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BAF37201A1D70005ACC4F /* AuthService.swift */; };
 		077BAF3A201A5640005ACC4F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BAF39201A5640005ACC4F /* RoundedButton.swift */; };
 		077BAF3C201D76AE005ACC4F /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BAF3B201D76AE005ACC4F /* UserDataService.swift */; };
+		077BAF3E201DF566005ACC4F /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BAF3D201DF566005ACC4F /* AvatarPickerVC.swift */; };
+		077BAF40201DF7D3005ACC4F /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BAF3F201DF7D3005ACC4F /* AvatarCell.swift */; };
 		0788FB8820121B9000EA5124 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0788FB8720121B9000EA5124 /* SWRevealViewController.m */; };
 		07DC6CD320137D2700655B38 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6CD220137D2700655B38 /* ChatVC.swift */; };
 		07DC6CD520137D3400655B38 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC6CD420137D3400655B38 /* ChannelVC.swift */; };
@@ -35,6 +37,8 @@
 		077BAF37201A1D70005ACC4F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		077BAF39201A5640005ACC4F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		077BAF3B201D76AE005ACC4F /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		077BAF3D201DF566005ACC4F /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		077BAF3F201DF7D3005ACC4F /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		0788FB8520121B8F00EA5124 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		0788FB8620121B9000EA5124 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		0788FB8720121B9000EA5124 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				07DC6CD420137D3400655B38 /* ChannelVC.swift */,
 				07DC6CDB2013F85C00655B38 /* LoginVC.swift */,
 				07260AF120176ABF00BD8986 /* CreateAccountVC.swift */,
+				077BAF3D201DF566005ACC4F /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			children = (
 				07DC6CD62013EA0200655B38 /* GradientView.swift */,
 				077BAF39201A5640005ACC4F /* RoundedButton.swift */,
+				077BAF3F201DF7D3005ACC4F /* AvatarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DC6CD520137D3400655B38 /* ChannelVC.swift in Sources */,
+				077BAF3E201DF566005ACC4F /* AvatarPickerVC.swift in Sources */,
 				077BAF3A201A5640005ACC4F /* RoundedButton.swift in Sources */,
 				07DC6CD320137D2700655B38 /* ChatVC.swift in Sources */,
 				077BAF3C201D76AE005ACC4F /* UserDataService.swift in Sources */,
@@ -299,6 +306,7 @@
 				077BAF38201A1D70005ACC4F /* AuthService.swift in Sources */,
 				07DC6CDC2013F85C00655B38 /* LoginVC.swift in Sources */,
 				07DC6CD72013EA0200655B38 /* GradientView.swift in Sources */,
+				077BAF40201DF7D3005ACC4F /* AvatarCell.swift in Sources */,
 				071AF5F92010E036000420CD /* AppDelegate.swift in Sources */,
 				0788FB8820121B9000EA5124 /* SWRevealViewController.m in Sources */,
 				07DC6CDA2013F2EA00655B38 /* Constants.swift in Sources */,
