@@ -29,6 +29,10 @@ class CreateAccountVC: UIViewController {
         if UserDataService.instance.avatarName != "" {
             avatarName = UserDataService.instance.avatarName
             userImg.image = UIImage(named: avatarName)
+            
+            if avatarName.contains("light") && bgColor == nil {
+                userImg.backgroundColor = UIColor.lightGray
+            }
         }
     }
     
