@@ -15,6 +15,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // Variables
     var avatarName = "profileDefault"
@@ -38,6 +39,10 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAcctPressed(_ sender: Any) {
+        
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
         // unwrap optionals, return if they are empty
         guard let name = usernameText.text, usernameText.text != "" else { return }
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
@@ -52,15 +57,26 @@ class CreateAccountVC: UIViewController {
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             
                             print("created user!", UserDataService.instance.name, UserDataService.instance.avatarName)
+                            
+                            self.spinner.isHidden = true
+                            self.spinner.stopAnimating()
+                            
                             self.performSegue(withIdentifier: UNWIND_TO_CHANNEL, sender: nil)
                         })
                     } else {
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                        
                         print("failed to login user :(")
                     }
                 })
             } else {
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
+
                 print("failed to register user :(")
             }
+
         }
     }
     
@@ -84,6 +100,8 @@ class CreateAccountVC: UIViewController {
     }
     
     func setupView() {
+        spinner.isHidden = true
+
         usernameText.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
         
         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor: SMACK_PURPLE_PLACEHOLDER])
