@@ -81,7 +81,7 @@ class AuthService {
                     self.isLoggedIn = true
                     completion(true)
                 } catch {
-                    print("Error parsing JSON")
+                    debugPrint("Error parsing JSON")
                     completion(false)
                 }
                 
@@ -120,7 +120,7 @@ class AuthService {
                     UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
                     completion(true)
                 } catch {
-                    print("Error parsing JSON")
+                    debugPrint("Error parsing JSON")
                     completion(false)
                 }
             } else {

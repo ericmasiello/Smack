@@ -50,13 +50,13 @@ class CreateAccountVC: UIViewController {
      
         AuthService.instance.registerUser(email: email, password: pass) { (success) in
             if success {
-                print("registered user!")
+                debugPrint("registered user!")
                 AuthService.instance.loginUser(email: email, password: pass, completion: { (success) in
                     if (success) {
-                        print("logged in user!",  AuthService.instance.authToken)
+                        debugPrint("logged in user!",  AuthService.instance.authToken)
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             
-                            print("created user!", UserDataService.instance.name, UserDataService.instance.avatarName)
+                            debugPrint("created user!", UserDataService.instance.name, UserDataService.instance.avatarName)
                             
                             self.spinner.isHidden = true
                             self.spinner.stopAnimating()
@@ -70,14 +70,14 @@ class CreateAccountVC: UIViewController {
                         self.spinner.isHidden = true
                         self.spinner.stopAnimating()
                         
-                        print("failed to login user :(")
+                        debugPrint("failed to login user :(")
                     }
                 })
             } else {
                 self.spinner.isHidden = true
                 self.spinner.stopAnimating()
 
-                print("failed to register user :(")
+                debugPrint("failed to register user :(")
             }
 
         }
