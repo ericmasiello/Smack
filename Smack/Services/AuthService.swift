@@ -80,8 +80,8 @@ class AuthService {
                     self.authToken = json["token"].stringValue
                     self.isLoggedIn = true
                     completion(true)
-                } catch {
-                    debugPrint("Error parsing JSON")
+                } catch let error {
+                    debugPrint(error as Any)
                     completion(false)
                 }
                 
@@ -124,8 +124,8 @@ class AuthService {
             
             UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
             completion(true)
-        } catch {
-            debugPrint("Error parsing JSON")
+        } catch let error {
+            debugPrint(error as Any)
             completion(false)
         }
     }
