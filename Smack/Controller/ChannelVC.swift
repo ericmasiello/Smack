@@ -11,8 +11,6 @@ import UIKit
 class ChannelVC: UIViewController {
 
     @IBOutlet weak var loginBtn: UIButton!
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
-
     @IBOutlet weak var userImg: CircleImage!
     
     override func viewDidLoad() {
@@ -38,6 +36,8 @@ class ChannelVC: UIViewController {
             userImg.backgroundColor = UIColor.clear
         }
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
 
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
