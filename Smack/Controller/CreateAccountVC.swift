@@ -46,7 +46,7 @@ class CreateAccountVC: UIViewController {
         // unwrap optionals, return if they are empty
         guard let name = usernameText.text, usernameText.text != "" else { return }
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
-        guard let pass = emailTxt.text, passTxt.text != "" else { return }
+        guard let pass = passTxt.text, passTxt.text != "" else { return }
      
         AuthService.instance.registerUser(email: email, password: pass) { (success) in
             if success {
