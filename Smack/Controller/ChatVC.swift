@@ -41,6 +41,7 @@ class ChatVC: UIViewController {
     func updateWithChannel() {
         let channelName = MessageService.instance.selectedChannel?.channelTitle ?? ""
         channelNameLbl.text = "#\(channelName)"
+        getMessages()
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
@@ -56,7 +57,22 @@ class ChatVC: UIViewController {
         MessageService.instance.findAllChannel { (success) in
             if !success {
                 debugPrint("Failed to load channels")
+            } else {
+                if MessageService.instance.channels.count > 0 {
+                    // set first channel as default selection
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelNameLbl.text = "No channels yet"
+                }
             }
+        }
+    }
+    
+    func getMessages() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+        MessageService.instance.findAllMessages(forChannelId: channelId) { (success) in
+            debugPrint("got here")
         }
     }
 }
