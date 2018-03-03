@@ -13,6 +13,7 @@ class ChatVC: UIViewController {
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var channelNameLbl: UILabel!
+    @IBOutlet weak var messageTxtBox: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,10 @@ class ChatVC: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func sendMessagePressed(_ sender: Any) {
+        
     }
     
     func getMessages() {
