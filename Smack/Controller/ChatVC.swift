@@ -15,9 +15,12 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var messageTxtBox: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sendBtn.isHidden = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -93,6 +96,14 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.channelNameLbl.text = "No channels yet"
                 }
             }
+        }
+    }
+    
+    @IBAction func messageBoxEditing(_ sender: Any) {
+        if let txt = messageTxtBox.text {
+            sendBtn.isHidden = txt.count == 0
+        } else {
+            sendBtn.isHidden = true
         }
     }
     
