@@ -55,7 +55,7 @@ class MessageService {
         Alamofire.request("\(URL_GET_MESSAGES)/\(id)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
-                self.clearMessagse()
+                self.clearMessages()
                 guard let data = response.data else { return }
                 
                 do {
@@ -88,7 +88,7 @@ class MessageService {
         }
     }
     
-    func clearMessagse() {
+    func clearMessages() {
         messages.removeAll()
     }
 }
