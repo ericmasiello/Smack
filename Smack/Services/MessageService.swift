@@ -15,6 +15,7 @@ class MessageService {
     
     var channels = [Channel]()
     var messages = [Message]()
+    var unreadMessages = [String]()
     var selectedChannel: Channel?
     
     func findAllChannel(completion: @escaping CompletionHandler) {
@@ -49,6 +50,14 @@ class MessageService {
     
     func clearChannels() {
         channels.removeAll()
+    }
+    
+    func updateUnreadMessages(withCurrentSelectedChannelId id: String) {
+        if self.unreadMessages.count > 0 {
+            self.unreadMessages = self.unreadMessages.filter({ (unreadId) -> Bool in
+                return unreadId != id
+            })
+        }
     }
     
     func findAllMessages(forChannelId id: String, completion: @escaping CompletionHandler) {
